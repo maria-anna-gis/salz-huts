@@ -1,1 +1,1 @@
-# salz-huts
+https://maria-anna-gis.github.io/salz-huts/
