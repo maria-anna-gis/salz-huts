@@ -29,21 +29,6 @@
             width: 100%;
             height: 100vh;
         }
-
-        .coordinate-box {
-            position: absolute;
-            bottom: 10px;
-            left: 10px;
-            background-color: rgba(255, 255, 255, 0.8);
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 10px;
-            font-family: Verdana, Tahoma, sans-serif;
-            font-size: 14px;
-            color: #333;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-        }
     
         .map-title {
             position: absolute;
@@ -69,6 +54,16 @@
       border-radius: 5px;
     }
 
+    .leaflet-control-measure {
+        z-index:1500 !important;
+    }
+    .leaflet-container{
+        cursor: crosshair !important;
+    }
+    .leaflet-measure-interaction{
+        pointer-events: auto !important
+    }
+
 <!-- Plugin for the info button-->
 <!-- Leaflet CSS & JS -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
@@ -77,8 +72,7 @@
 <!-- Leaflet.infoButton Plugin CSS -->
 <link rel="stylesheet" href="plugins/Leaflet.infoButton/Leaflet.infoButton.css" />
 
-<!-- Plugin for measure button-->
-<script src="plugins/leaflet.measure/leaflet.measure.js"></script>
+
 
     </style>
 </head>
@@ -98,10 +92,14 @@
 <script src="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js"></script>
 <!-- Leaflet.infoButton Plugin JS -->
 <script src="plugins/Leaflet.infoButton/Leaflet.infoButton.js"></script>
+<!-- Leaflet.measure Plugin JS -->
+<script src="plugins/leaflet.measure/leaflet.measure.js"></script>
+
 
 <script>
 // Map initialization
     var map = L.map('map', {fullscreenControl: true, fullscreenControlOptions: { position: 'topright' } }).setView([47.50, 13.15], 9);
+
 
 // Basemap tiles
     var OpenTopoMap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
@@ -116,6 +114,18 @@
 
 // Add map
     OpenTopoMap.addTo(map);
+
+    L.Measure = {
+    linearMeasurement: "Distance measurement",
+    areaMeasurement: "Area measurement",
+    start: "Start",
+    meter: "m",
+    kilometer: "km",
+    squareMeter: "m²",
+    squareKilometers: "km²",
+    };
+
+    var measure = L.control.measure({}).addTo(map);
 
     var infoButton = L.control.infoButton({
       position: 'topleft',
