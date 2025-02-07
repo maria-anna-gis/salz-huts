@@ -172,7 +172,7 @@ var legendCategories = {
     
 // Huts points adding
 
-    fetch('https://cdn.jsdeliver.net/gh/maria-anna-gis/salz-huts/data/huts.geojson')
+    fetch('./data/huts.json')
         .then(response => response.json())
         .then(huts => { 
             console.log(huts);  //
