@@ -29,10 +29,5 @@ This folder contains the necessary files to load the introduction/information bu
 ## Creation
 Hut data for this map was kindly obtained from the OAV as a CSV which was subsequently cleaned and converted to a GEOJSON file. Icons were modified from those used on the OAV website.
 
-##Note
-The html file cannot be opened directly from its folder location and instead MUST be hosted locally, e.g. through LiveServer in VisualStudioCode.
 
-#Enjoy!
-
-
-https://maria-anna-gis.github.io/salz-huts/
+Click [**here](https://maria-anna-gis.github.io/salz-huts/) to open the map in a new window.
