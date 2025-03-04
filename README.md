@@ -30,4 +30,4 @@ This folder contains the necessary files to load the introduction/information bu
 Hut data for this map was kindly obtained from the OAV as a CSV which was subsequently cleaned and converted to a GEOJSON file. Icons were modified from those used on the OAV website.
 
 
-Click [**here](https://maria-anna-gis.github.io/salz-huts/) to open the map in a new window.
+Click [**here**](https://maria-anna-gis.github.io/salz-huts/) to open the map in a new window.
